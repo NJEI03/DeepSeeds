@@ -34,7 +34,13 @@ except Exception as e:
 
 # Find and click the submit button (update selector if needed)
 try:
-    submit_btn = driver.find_element(By.CSS_SELECTOR, '.btn.btn-lg.btn-block.palette-Obiasong.bg.waveseffect')
+    submit_btn = driver.find_element(By.TAG_NAME, 'button')
     submit_btn.click()
 except Exception as e:
     print("Submit button not found:", e)
+
+
+
+input("Press Enter to close the browser...")
+
+driver.quit()
