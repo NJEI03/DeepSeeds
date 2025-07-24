@@ -79,6 +79,9 @@ print(f'First Name: {seperate[0]}')
 print(f'Last Name: {seperate[1]}')
 print('-'* 20)
 print(''* 5)
+# Or this can be done by formatting each character and later merging em
+
+
 
 #Exercise 2: Word Counter
 sentence = 'Python is an amazing programming language'
