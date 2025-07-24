@@ -107,15 +107,31 @@
 #Do leap year Exercise
 #Conditions for a leap are, it should be divisible by 4, 400 and not by 100 only
 
-year = int(input('What is the bloody year?'))
+# year = int(input('What is the bloody year?'))
 
-if year % 4 == 0:
-    if year % 100 == 0:
-        if year % 400 == 0:
-            print(f'{year} is a leap year')
-        else:
-            print(f'{year} is not a leap year')
-    else:
-        print(f'{year} is a leap year')
+# if year % 4 == 0:
+#     if year % 100 == 0:
+#         if year % 400 == 0:
+#             print(f'{year} is a leap year')
+#         else:
+#             print(f'{year} is not a leap year')
+#     else:
+#         print(f'{year} is a leap year')
  
-   
+   #for loop
+#1. starting point
+#2. condition
+#3. increment or decrement
+
+names=['Will', 'JJ','Gita','Kilian','Paul', 'Mbom' 'jj mbom']
+# for name in names:
+count = 0
+for name in names:
+    print(f'{count + 1}. {name}')
+    count += 1
+    # if name.endswith('mbom'):
+    #     print(f' We don catch you {name}')
+    # else:
+    #     print(f'welcome to the party : {name}')
+
+
