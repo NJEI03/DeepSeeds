@@ -134,4 +134,12 @@ for name in names:
     # else:
     #     print(f'welcome to the party : {name}')
 
+#Range(stop)
+for i in range(5):
+    print(i)
+#Range(start, stop)
+for i in range(2, 7):
+    print(i)
 
+while True:
+    print('madness')
