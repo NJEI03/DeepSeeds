@@ -39,16 +39,38 @@
 # print('Goodbye!')
 
 #Break existing loop completely
-print('Finding the first even number:')
-for number in range(1,10):
-    if number % 2 ==0:
-        print(f'Found even number:{number}')
-        break
-    print(f'{number} is odd')
+# print('Finding the first even number:')
+# for number in range(1,10):
+#     if number % 2 ==0:
+#         print(f'Found even number:{number}')
+#         break
+#     print(f'{number} is odd')
 
-#Continue - skip next iteration
-print('\nPrinting only odd numbers')
-for number in range(1,10):
-    if number % 2 == 0:
-        continue # skip even numbers
-    print(f'Odd number: {number}') 
+# #Continue - skip next iteration
+# print('\nPrinting only odd numbers')
+# for number in range(1,10):
+#     if number % 2 == 0:
+#         continue # skip even numbers
+#     print(f'Odd number: {number}') 
+
+# Multiplication table
+print("Multiplication Table:")
+for i in range(1, 4):  # Rows
+    for j in range(1, 4):  # Columns
+        result = i * j
+        print(f"{i} x {j} = {result}")
+    print()  # Empty line after each row 
+
+    # Pattern printing
+print("Triangle pattern:")
+for row in range(1, 6):
+    for star in range(row):#explain this line
+        # Print stars in each row
+        #How does it know the number of stars to print?
+        # The inner loop runs 'row' times, so it prints 'row' stars in each row.
+        print("*", end="")
+    print() 
+    #explaining pattern printing in simple terms
+# The outer loop controls the number of rows
+# The inner loop controls the number of stars printed in each row
+# The `end=""` in the print function prevents a newline after each star 
