@@ -8,8 +8,8 @@ from langchain_google_genai import GoogleGenerativeAI
 load_dotenv(find_dotenv())
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-print(GOOGLE_API_KEY)
-print(GROQ_API_KEY)
+# print(GOOGLE_API_KEY)
+# print(GROQ_API_KEY)
 
 # STEP 2: CONNECTING LLMs
 
