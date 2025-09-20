@@ -1,7 +1,7 @@
-from fastapi import FastAPI
-from  day2.config import load_google_llm
+from fastapi import FastAPI,File, UploadFile, HTTPException
+from  day2.config import load_google_chat_model, load_google_llm
 app = FastAPI()
-
+import base64
 @app.get("/")
 def hello():
     return{
@@ -90,3 +90,6 @@ def get_config(temp:float):
     return{
         "temperature":temp
     }
+
+##
+
