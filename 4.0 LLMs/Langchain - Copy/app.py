@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from  day2.config import load_google_llm
 app = FastAPI()
 
 @app.get("/")
@@ -39,6 +39,7 @@ def me():
         }
     }
 
+    return google_llm
 ## Path parameters
 @app.get("/sentiments/{text}")
 def sentiment_analizer(text):
@@ -62,7 +63,7 @@ def sentiment_analizer(text):
 # Hint: Use path parameters
 
 #Question : is it possible to get user input from fastapi on the browser?
-from langchain_google_genai import GoogleGenerativeAI
+
 import os
 from dotenv import load_dotenv, find_dotenv
 
@@ -70,15 +71,6 @@ def environement_variables():
     load_dotenv(find_dotenv())  
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-def load_google_llm():
-    # loading our keys
-    environement_variables()
-    google_llm = GoogleGenerativeAI(
-        # pass our configurations here
-        model="gemini-2.5-flash", 
-        temperature=0.7
-        )
-    return google_llm
 llm = load_google_llm()
 @app.get("/chat/{user_prompt}")
 def chat(user_prompt):
@@ -87,4 +79,14 @@ def chat(user_prompt):
         "user_prompt": user_prompt,
         "llm_response": llm_response
 
+    }
+@app.get("/get-config/{temp}")
+def get_config(temp:float):
+    if temp < 0 or temp >1:
+        print('Temperature must be between 0  and 1')
+        return{
+            "error": "Temperature must be between 0 and 1"
+        }
+    return{
+        "temperature":temp
     }
