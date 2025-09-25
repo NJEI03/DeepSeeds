@@ -52,7 +52,9 @@ try:
    user1=User(name='JJ',email='jj@gmsil.com')
    user2=User(name='JJ2',email='jj2@gmsil.com')
    #use session to add data to our db
-   
+   session.add_all([user1, user2])
+   #commmit or save 
+   session.commit  
 except Exception as e:
    #when there is a problem
    
