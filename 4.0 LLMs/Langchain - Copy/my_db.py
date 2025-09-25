@@ -1,7 +1,7 @@
 
 
 #1. Engne. Connect our db to python program
-# 2. eclarative base that help create our dbmodel
+# 2.declarative base that help create our dbmodel
 #3 session maker helps us to talk to our database helps us manipulate our db, maps our python objects to our db, just like prisma for for js
 
 from sqlalchemy import create_engine,Column,Integer,String,DateTime
@@ -45,18 +45,23 @@ Base.metadata.create_all(bind=engine)
 #creating a db with the engine above
 
 # Add data to our database
-session = sessionlocal()
+session = sessionlocal(bind=engine)
 
 try: 
    #When the code is ok, the try block ends
-   user1=User(name='JJ',email='jj@gmsil.com')
-   user2=User(name='JJ2',email='jj2@gmsil.com')
+   user1=User(name='JJ',email='jj@gmail.com')
+   user2=User(name='JJ2',email='jj2@gmail.com')
    #use session to add data to our db
    session.add_all([user1, user2])
    #commmit or save 
-   session.commit  
+   session.commit() 
 except Exception as e:
    #when there is a problem
+   session.rollback()
+   print(f'There was an error adding data{e}')
+
    
 
 finally:
+   #Execute after try or except
+   session.close()
