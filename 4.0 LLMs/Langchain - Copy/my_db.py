@@ -43,3 +43,18 @@ class User(Base):
  #Now we have to be able to migrate our database uing the Base class
 Base.metadata.create_all(bind=engine)
 #creating a db with the engine above
+
+# Add data to our database
+session = sessionlocal()
+
+try: 
+   #When the code is ok, the try block ends
+   user1=User(name='JJ',email='jj@gmsil.com')
+   user2=User(name='JJ2',email='jj2@gmsil.com')
+   #use session to add data to our db
+   
+except Exception as e:
+   #when there is a problem
+   
+
+finally:
